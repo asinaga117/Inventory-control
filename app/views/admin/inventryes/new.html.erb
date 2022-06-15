@@ -1,0 +1,47 @@
+<h1>新規在庫登録</h1>
+
+<%= form_with model: @inventry, url: admin_inventryes_path, method: :post do |f| %>
+
+<table>
+  <tr>
+    <div>
+      <th><%= f.label :image, "商品画像" %></th>
+      <td><%= f.file_field :image, accept: "image/*" %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div>
+      <th><%= f.label :name, "在庫名" %></th>
+      <td><%= f.text_field :name %></td>
+    </div>
+  </tr>
+
+   <tr>
+    <div>
+      <th><%= f.label :introduction, "在庫説明" %></th>
+      <td><%= f.text_area :introduction, size: "50x5" %></td>
+    </div>
+  </tr>
+
+   <tr>
+    <div>
+      <th><%= f.label :place, "在庫保管場所" %></th>
+      <td><%= f.text_field :place %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div>
+      <th><%= f.label :amount, "数量" %></th>
+      <td><%= f.text_field :amount %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div>
+      <th><%= f.submit "新規登録" %></th>
+    </div>
+  </tr>
+<% end %>
+</table>

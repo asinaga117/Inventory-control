@@ -1,0 +1,2 @@
+module Admin::InventryesHelper
+end

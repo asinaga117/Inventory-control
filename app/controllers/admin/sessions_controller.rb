@@ -24,4 +24,11 @@ class Admin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  
+  def after_sign_in_path_for(resource)
+    #flash[:notice] = "登録しました"
+
+    admin_top_path
+  end
+  
 end
