@@ -1,5 +1,30 @@
 <h1>在庫一覧</h1>
 
+<div>
+    <table>
+      <thead>
+        <tr>
+          <th>在庫名</th>
+          <th>在庫保管場所</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @inventryes.each do |inventry| %>
+        <tr>
+          <td>
+            <%= link_to admin_inventrye_path(inventry.id) do %>
+            <%= inventry.name %>
+            <% end %>
+          </td>
+          <td><%= inventry.place %></td>
+          <td><%= inventry.amount %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 <h2>新規在庫登録</h2>
 
-<div><%= link_to "新規",new_admin_inventrye_path %></div>
+<div><%= link_to "新規在庫",new_admin_inventrye_path %></div>
