@@ -18,6 +18,13 @@ class Admin::InventryesController < ApplicationController
   end
 
   def edit
+    @inventry = Inventry.find(params[:id])
+  end
+  
+  def update
+    @inventry = Inventry.find(params[:id])
+    @inventry.update(inventry_params)
+    redirect_to admin_inventrye_path
   end
   
   private

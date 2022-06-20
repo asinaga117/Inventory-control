@@ -1,2 +1,41 @@
-<h1>Admin::Inventryes#edit</h1>
-<p>Find me in app/views/admin/inventryes/edit.html.erb</p>
+<h1>在庫編集</h1>
+
+<%= form_with model: @inventry, url: admin_inventrye_path(@inventry.id), method: :patch do |f| %>
+<table>
+  <tr>
+    <div>
+      <%= f.label :image, "在庫画像" %>
+      <%= f.file_field :image, accept: "image/*" %>
+    </div>
+  </tr>
+  <tr>
+    <div>
+      <%= f.label :name, "在庫名" %>
+      <%= f.text_field :name %>
+    </div>
+  </tr>
+  <tr>
+    <div>
+      <%= f.label :introduction, "在庫説明" %>
+      <%= f.text_area :introduction, size: "50x5" %>
+    </div>
+  </tr>
+  <tr>
+    <div>
+      <%= f.label :place, "在庫保管場所" %>
+      <%= f.text_field :place %>
+    </div>
+  </tr>
+  <tr>
+    <div>
+      <%= f.label :amount, "数量" %>
+      <%= f.text_field :amount %>
+    </div>
+  </tr>
+  <tr>
+    <div>
+      <%= f.submit "変更を保存" %>
+    </div>
+  </tr>
+<% end %>
+</table>
