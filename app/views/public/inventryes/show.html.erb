@@ -1,0 +1,29 @@
+<h1>在庫詳細</h1>
+<div>
+  <%= image_tag @inventry.image,  size: "200x200" %>
+</div>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td>在庫名</td>
+        <td><%= @inventry.name %></td>
+      </tr>
+      <tr>
+        <td>商品説明</td>
+        <td><%= @inventry.introduction %></td>
+      </tr>
+      <tr>
+        <td>在庫保管場所</td>
+        <td><%= @inventry.place %></td>
+      </tr>
+      <tr>
+        <td>数量</td>
+        <td><%= @inventry.amount %></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <%= link_to "在庫一覧に戻る",public_inventryes_path %>
+</div>

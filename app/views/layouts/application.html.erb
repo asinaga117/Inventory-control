@@ -11,9 +11,42 @@
   </head>
 
   <body>
-    <% if admin_signed_in? %>
-    <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-    <% end%>
+    <header>
+      <nav>
+        <% if admin_signed_in? %>
+        <ul>
+          <li>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          </li>
+          
+          <li>
+            <%= link_to "会員一覧", admin_customers_path %>
+          </li>
+          
+          <li>
+             <%= link_to "在庫一覧", admin_inventryes_path %>
+          </li>
+        </ul>
+        <% end%>
+        
+        <% if customer_signed_in? %>
+        <ul>
+          <li>
+            <%= link_to "ログアウト", destroy_customer_session_path, method: :delete %>
+          </li>
+          
+          
+          <li>
+            <%= link_to "在庫一覧", public_inventryes_path %>
+          </li>
+            
+          <li>
+            <%= link_to "マイページ", public_customer_path(current_customer) %>
+          </li>
+        </ul>
+        <% end %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

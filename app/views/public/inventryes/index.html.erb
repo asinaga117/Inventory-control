@@ -1,0 +1,15 @@
+<h1>在庫一覧</h1>
+
+<% @inventry.each do |inventry| %>
+
+<div>
+  <div>
+    <%= image_tag inventry.image,  size: "100x100" %>
+  </div>
+  <div>
+    <%= link_to public_inventrye_path(inventry.id) do %>
+    <p><%= inventry.name %></p>
+    <% end %>
+  </div>
+</div>
+<% end %>

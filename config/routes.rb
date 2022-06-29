@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
   root "homes#top"
   
+  namespace :public do
+    get 'top' => 'homes#top'
+    
+    resources :inventryes, only: [:index, :new, :create, :show, :edit, :update]
+    
+    resources :customers, only: [:show,:edit,:update]
+    
+  end
+  
+  
   namespace :admin do
     get 'top' => 'homes#top'
     
     resources :inventryes, only: [:index, :new, :create, :show, :edit, :update]
+    
+    resources :customers, only: [:index,:show]
     
   end
   
